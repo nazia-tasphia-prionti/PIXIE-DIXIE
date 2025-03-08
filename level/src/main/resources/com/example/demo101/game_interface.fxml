@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="575.0" prefWidth="925.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo101.GameController">
+
+    <ImageView fx:id="backgroundImage" fitHeight="575.0" fitWidth="960.0">
+        <image>
+            <Image url="@images/background.png" />
+        </image>
+    </ImageView>
+
+
+    <Label fx:id="titleLabel" layoutX="350.0" layoutY="50.0" styleClass="titleLabel" text="LEVELS" />
+
+
+    <Label fx:id="lockedMessageLabel" layoutX="400.0" layoutY="500.0" prefHeight="34.0" prefWidth="395.0" text="Level is Locked" textFill="#fff408"
+           visible="false">
+        <font>
+            <Font size="20.0" />
+        </font>
+    </Label>
+
+
+    <ScrollPane hbarPolicy="NEVER" layoutY="150.0" prefHeight="279.0" prefWidth="960.0" style="-fx-background-color: transparent;" vbarPolicy="NEVER">
+
+        <HBox fx:id="levelContainer" spacing="50.0">
+
+            <VBox alignment="CENTER" spacing="10.0">
+                <ImageView fx:id="imageLevel1" fitHeight="180.0" fitWidth="180.0" layoutY="20.0" styleClass="levelImage">
+                    <image>
+                        <Image url="@images/mercury.png" />
+                    </image>
+                </ImageView>
+                <Text style="-fx-font-size: 20px; -fx-fill: white;" text="Level 1" />
+            <HBox.margin>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </HBox.margin>
+            </VBox>
+
+            <VBox alignment="CENTER" spacing="10.0">
+                <ImageView fx:id="imageLevel2" fitHeight="180.0" fitWidth="180.0" layoutY="20.0" styleClass="levelImage">
+                    <image>
+                        <Image url="@images/venus.png" />
+                    </image>
+                </ImageView>
+                <Text style="-fx-font-size: 20px; -fx-fill: white;" text="Level 2" />
+            </VBox>
+
+            <VBox alignment="CENTER" spacing="10.0">
+                <ImageView fx:id="imageLevel3" fitHeight="180.0" fitWidth="180.0" layoutY="20.0" styleClass="levelImage">
+                    <image>
+                        <Image url="@images/earth.png" />
+                    </image>
+                </ImageView>
+                <Text style="-fx-font-size: 20px; -fx-fill: white;" text="Level 3" />
+            </VBox>
+
+            <VBox alignment="CENTER" spacing="10.0">
+                <ImageView fx:id="imageLevel4" fitHeight="180.0" fitWidth="180.0" layoutY="20.0" styleClass="levelImage">
+                    <image>
+                        <Image url="@images/mars1.png" />
+                    </image>
+                </ImageView>
+                <Text style="-fx-font-size: 20px; -fx-fill: white;" text="Level 4" />
+            </VBox>
+
+            <VBox alignment="CENTER" spacing="10.0">
+                <ImageView fx:id="imageLevel5" fitHeight="180.0" fitWidth="180.0" layoutY="20.0" styleClass="levelImage">
+                    <image>
+                        <Image url="@images/jupiter.png" />
+                    </image>
+                </ImageView>
+                <Text style="-fx-font-size: 20px; -fx-fill: white;" text="Level 5" />
+            </VBox>
+
+            <VBox alignment="CENTER" spacing="10.0">
+                <ImageView fx:id="imageLevel6" fitHeight="180.0" fitWidth="180.0" layoutY="20.0" styleClass="levelImage">
+                    <image>
+                        <Image url="@images/saturn.png" />
+                    </image>
+                </ImageView>
+                <Text style="-fx-font-size: 20px; -fx-fill: white;" text="Level 6" />
+            </VBox>
+
+            <VBox alignment="CENTER" spacing="10.0">
+                <ImageView fx:id="imageLevel7" fitHeight="180.0" fitWidth="180.0" layoutY="20.0" styleClass="levelImage">
+                    <image>
+                        <Image url="@images/uranus.png" />
+                    </image>
+                </ImageView>
+                <Text style="-fx-font-size: 20px; -fx-fill: white;" text="Level 7" />
+            </VBox>
+
+            <VBox alignment="CENTER" spacing="10.0">
+                <ImageView fx:id="imageLevel8" fitHeight="180.0" fitWidth="180.0" layoutY="20.0" styleClass="levelImage">
+                    <image>
+                        <Image url="@images/neptune.png" />
+                    </image>
+                </ImageView>
+                <Text style="-fx-font-size: 20px; -fx-fill: white;" text="Level 8" />
+            </VBox>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+        </HBox>
+    </ScrollPane>
+
+    <!-- Dotted Curvy Line (Black Color) -->
+    <Path fx:id="curvyLine" layoutX="50.0" layoutY="200.0" stroke="navajowhite" strokeWidth="2" />
+   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@images/star_spark.gif" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="150.0" fitWidth="159.0" layoutX="754.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@images/star_spark.gif" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="425.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@images/star_spark.gif" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="150.0" fitWidth="171.0" layoutX="754.0" layoutY="425.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@images/star_spark.gif" />
+      </image>
+   </ImageView>
+</AnchorPane>
