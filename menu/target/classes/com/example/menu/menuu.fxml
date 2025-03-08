@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="915.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.menu.MenuController" stylesheets="@menu_styles.css" >
+   <children>
+      <ImageView fitHeight="521.0" fitWidth="931.0" layoutX="-2.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@PAGE.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="profileIcon" fitHeight="40.0" fitWidth="40.0" layoutX="870.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true"  onMouseClicked="#handleProfileIcon">
+         <image>
+            <Image url="@profiles.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="870.0" layoutY="55.0" text="Profile" styleClass="icon-label"/>
+      <ImageView fx:id="settingsIcon" fitHeight="40.0" fitWidth="40.0" layoutX="808.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true"  onMouseClicked="#handleSettingsIcon">
+         <image>
+            <Image url="@settings.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="810.0" layoutY="53.0" text="Settings" styleClass="icon-label"/>
+      <ImageView fx:id="leftArrowIcon" fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true"   onMouseClicked="#handleLeftArrowIcon">
+         <image>
+            <Image url="@left_arrow.png" />
+         </image>
+      </ImageView>
+
+      <ImageView fitHeight="501.0" fitWidth="895.0" layoutX="-2.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@frame.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="459.0" fitWidth="815.0" layoutX="47.0" layoutY="19.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@gradient.png" />
+         </image>
+      </ImageView>
+      <ScrollPane layoutX="92.0" layoutY="68.0" prefHeight="358.0" prefWidth="722.0"
+                  styleClass="scroll-pane">
+         <content>
+            <AnchorPane prefHeight="354.0" prefWidth="1376.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="260.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="281.0" fitWidth="504.0" layoutX="110.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@joy.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="playButton1" layoutX="310.0" layoutY="297.0" mnemonicParsing="false" text="PLAY" onAction="#handlePlayButton1Click">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="163.0" fitWidth="189.0" layoutX="278.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@spelly_pix.gif" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="281.0" fitWidth="504.0" layoutX="751.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@joy.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="playButton2" layoutX="950.0" layoutY="297.0" mnemonicParsing="false" text="PLAY" onAction="#handlePlayButton2Click">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="163.0" fitWidth="189.0" layoutX="919.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@space_story.gif" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
