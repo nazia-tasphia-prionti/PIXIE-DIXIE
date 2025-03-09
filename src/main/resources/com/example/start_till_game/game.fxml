@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.start_till_game.GameController">
+    <children>
+        <ImageView fx:id="wordImage" fitWidth="300" fitHeight="300" layoutX="250" layoutY="50"/>
+        <Label fx:id="wordPrompt" layoutX="250" layoutY="360" text="Spell the word: "/>
+        <TextField fx:id="userInput" layoutX="250" layoutY="400"/>
+        <Button fx:id="hintButton" layoutX="250" layoutY="450" text="Hint" onAction="#useHint"/>
+        <Button fx:id="musicButton" layoutX="350" layoutY="450" text="Music On" onAction="#toggleMusic"/>
+        <Label fx:id="feedbackLabel" layoutX="250" layoutY="500"/>
+    </children>
+</AnchorPane>
