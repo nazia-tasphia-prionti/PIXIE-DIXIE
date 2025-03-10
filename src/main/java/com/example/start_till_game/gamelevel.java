@@ -1,25 +1,25 @@
 package com.example.start_till_game;
 
-//public class gamelevel {}
-//package com.example.demo101;
-
 import javafx.animation.ScaleTransition;
-import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.CubicCurveTo;
 import javafx.scene.shape.Path;
 import javafx.scene.shape.MoveTo;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.util.Objects;
+public class GameLevel {
 
-public class gamelevel {
-
+    public ImageView backgroundImage;
+    public Label titleLabel;
+    public HBox levelContainer;
     @FXML
     private ImageView imageLevel1, imageLevel2, imageLevel3, imageLevel4, imageLevel5, imageLevel6, imageLevel7, imageLevel8;
 
@@ -30,7 +30,7 @@ public class gamelevel {
     private Label lockedMessageLabel; // Label to show locked message
 
     private double spaceshipX = 150.0;
-    private int unlockedLevels = 2;  // Start with 2 levels unlocked
+    private final int unlockedLevels = 1;  // Start with 2 levels unlocked
 
     @FXML
     public void initialize() {
@@ -68,7 +68,14 @@ public class gamelevel {
     private void onLevelClick(MouseEvent event, int levelNumber) {
         if (levelNumber <= unlockedLevels) {
             System.out.println("You clicked on level " + levelNumber);
-            //moveSpaceship(levelNumber);
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/start_till_game/game.fxml"));
+                Stage stage = (Stage) imageLevel1.getScene().getWindow();
+                Scene scene = new Scene(fxmlLoader.load());
+                stage.setScene(scene);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             lockedMessageLabel.setVisible(false); // Hide the locked message if level is unlocked
         } else {
             System.out.println("Level " + levelNumber + " is locked.");
@@ -76,17 +83,6 @@ public class gamelevel {
             lockedMessageLabel.setVisible(true); // Make the label visible
         }
     }
-
-    //   private void moveSpaceship(int level) {
-    //        double targetX = 150 + (level - 1) * 130;
-    //
-    //        TranslateTransition transition = new TranslateTransition();
-    //        transition.setNode(curvyLine);
-    //        transition.setDuration(Duration.seconds(1));
-    //        transition.setToX(targetX - spaceshipX);
-    //        transition.setOnFinished(e -> spaceshipX = targetX);
-    //        transition.play();
-    //    }
 
     private void createCurvyDottedLine() {
         curvyLine.getElements().clear();
@@ -125,5 +121,13 @@ public class gamelevel {
                 levelImages[i].setOpacity(0.25);
             }
         }
+    }
+
+    public double getSpaceshipX() {
+        return spaceshipX;
+    }
+
+    public void setSpaceshipX(double spaceshipX) {
+        this.spaceshipX = spaceshipX;
     }
 }

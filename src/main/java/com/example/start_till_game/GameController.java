@@ -1,13 +1,18 @@
 package com.example.start_till_game;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+
+import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class GameController {
     @FXML private Label wordPrompt, feedbackLabel;
@@ -18,12 +23,10 @@ public class GameController {
     private int level = 1, wordIndex = 0, hintCount = 2;
     private boolean isMusicOn = true;
     private Map<Integer, Map<String, String>> levels;
-    private SpeechHelper speechHelper;
     private SpeechValidator speechValidator;
 
     public void initialize() {
         initializeLevels();
-        speechHelper = new SpeechHelper();
         speechValidator = new SpeechValidator();
         loadNextWord();
     }
@@ -32,39 +35,39 @@ public class GameController {
         levels = new LinkedHashMap<>();
 
         levels.put(1, Map.of(
-                "cat", "images/cat.gif",
-                "dog", "images/dog.gif",
-                "bat", "images/bat.gif",
-                "rat", "images/rat.gif",
-                "hen", "images/hen.gif"));
+                "cat", "/images/cat.gif",
+                "dog", "/images/dog.gif",
+                "bat", "/images/bat.gif",
+                "rat", "/images/rat.gif",
+                "hen", "/images/hen.gif"));
 
         levels.put(2, Map.of(
-                "rose", "images/rose.gif",
-                "fish", "images/fish.gif",
-                "frog", "images/frog.gif",
-                "duck", "images/duck.gif",
-                "tree", "images/tree.gif"));
+                "rose", "/images/rose.gif",
+                "fish", "/images/fish.gif",
+                "frog", "/images/frog.gif",
+                "duck", "/images/duck.gif",
+                "tree", "/images/tree.gif"));
 
         levels.put(3, Map.of(
-                "earth", "images/earth.gif",
-                "truck", "images/truck.gif",
-                "grape", "images/grape.gif",
-                "peach", "images/peach.gif",
-                "clock", "images/clock.gif"));
+                "earth", "/images/earth.gif",
+                "truck", "/images/truck.gif",
+                "grape", "/images/grape.gif",
+                "peach", "/images/peach.gif",
+                "clock", "/images/clock.gif"));
 
         levels.put(4, Map.of(
-                "monkey", "images/monkey.gif",
-                "banana", "images/banana.gif",
-                "candle", "images/candle.gif",
-                "hammer", "images/hammer.gif",
-                "rabbit", "images/rabbit.gif"));
+                "monkey", "/images/monkey.gif",
+                "banana", "/images/banana.gif",
+                "candle", "/images/candle.gif",
+                "hammer", "/images/hammer.gif",
+                "rabbit", "/images/rabbit.gif"));
 
         levels.put(5, Map.of(
-                "avocado", "images/avocado.gif",
-                "balloon", "images/balloon.gif",
-                "giraffe", "images/giraffe.gif",
-                "rainbow", "images/rainbow.gif",
-                "bicycle", "images/bicycle.gif"));
+                "avocado", "/images/avocado.gif",
+                "balloon", "/images/balloon.gif",
+                "giraffe", "/images/giraffe.gif",
+                "rainbow", "/images/rainbow.gif",
+                "bicycle", "/images/bicycle.gif"));
     }
 
     private void loadNextWord() {
@@ -87,8 +90,7 @@ public class GameController {
 
         String word = (String) currentLevel.keySet().toArray()[wordIndex];
         wordPrompt.setText("Spell the word: " + word);
-        wordImage.setImage(new Image(getClass().getResourceAsStream(currentLevel.get(word))));
-        speechHelper.speak("This is a " + word);
+        wordImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream(currentLevel.get(word)))));
     }
 
     @FXML
@@ -96,15 +98,14 @@ public class GameController {
         String userInputText = userInput.getText().trim();
         String correctWord = wordPrompt.getText().replace("Spell the word: ", "").trim();
         boolean isCorrect = speechValidator.validateSpelling(userInputText, correctWord);
-
-        feedbackLabel.setText(isCorrect ? "✅ Correct!" : "❌ Wrong! Try Again.");
-        wordImage.setImage(new Image(isCorrect ? "images/correct.gif" : "images/wrong.gif"));
-
+        feedbackLabel.setText(isCorrect ? "✅ Correct!" : "❌ Wrong!");
         if (isCorrect) {
+            userInput.clear();
             wordIndex++;
             loadNextWord();
         }
     }
+
 
     @FXML
     private void useHint() {

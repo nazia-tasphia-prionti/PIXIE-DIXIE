@@ -18,11 +18,11 @@ public class LoadingPageController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Pause for 4 seconds before transitioning to the next scene
-        PauseTransition pause = new PauseTransition(Duration.seconds(4));
+        // Pause for 1 second before transitioning to the next scene
+        PauseTransition pause = new PauseTransition(Duration.seconds(1));
         pause.setOnFinished(event -> {
             try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/start_till_game/loadingpage.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/start_till_game/spaceLogin.fxml"));
                 Stage stage = (Stage) loadingAnimation.getScene().getWindow();
                 Scene scene = new Scene(fxmlLoader.load());
                 stage.setScene(scene);
