@@ -3,29 +3,27 @@ package com.example.start_till_game;
 import javafx.animation.ScaleTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.CubicCurveTo;
-import javafx.scene.shape.Path;
-import javafx.scene.shape.MoveTo;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import java.io.IOException;
+import java.util.Objects;
 
 public class GameLevel {
 
     public ImageView backgroundImage;
     public Label titleLabel;
-    public HBox levelContainer;
+    public VBox levelContainer;
     @FXML
     private ImageView imageLevel1, imageLevel2, imageLevel3, imageLevel4, imageLevel5, imageLevel6, imageLevel7, imageLevel8;
-
-    @FXML
-    private Path curvyLine;
-
+    @FXML private ImageView goMenuButton;
     @FXML
     private Label lockedMessageLabel; // Label to show locked message
 
@@ -59,6 +57,15 @@ public class GameLevel {
 
         // Update the images' states based on unlocked levels
         updateImageStates();
+        try {
+            Image leftArrow = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/images/left_arrow.png")));
+            goMenuButton.setImage(leftArrow);
+        } catch (NullPointerException e) {
+            System.out.println("Error: left_arrow.png file is missing!");
+        }
+
+        // Handle back button click
+        goMenuButton.setOnMouseClicked(event -> goBack());
     }
 
     private void setupLevelClickEvent(ImageView levelImage, int levelNumber) {
@@ -85,19 +92,7 @@ public class GameLevel {
     }
 
     private void createCurvyDottedLine() {
-        curvyLine.getElements().clear();
-        double startX = 150.0, startY = 250.0;
-        double controlX1 = 400.0, controlY1 = 100.0;
-        double controlX2 = 600.0, controlY2 = 400.0;
-        double endX = 650.0, endY = 250.0;
-
-        MoveTo moveTo = new MoveTo(startX, startY);
-        CubicCurveTo cubicCurveTo = new CubicCurveTo(controlX1, controlY1, controlX2, controlY2, endX, endY);
-        curvyLine.getElements().addAll(moveTo, cubicCurveTo);
-
-        curvyLine.setStroke(Color.WHITE);
-        curvyLine.setStrokeWidth(2);
-        curvyLine.getStrokeDashArray().addAll(10.0, 5.0);
+        // Implementation for creating curvy dotted line
     }
 
     private void addHoverAnimation(ImageView imageView) {
@@ -129,5 +124,17 @@ public class GameLevel {
 
     public void setSpaceshipX(double spaceshipX) {
         this.spaceshipX = spaceshipX;
+    }
+
+    @FXML
+    private void goBack() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/start_till_game/menuu.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) goMenuButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            System.out.println("Error: Unable to load menuu.fxml");
+        }
     }
 }
