@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.Image?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.start_till_game.GameController"
+            prefWidth="1280" prefHeight="720">
+
+    <!-- Background Image -->
+    <ImageView fitWidth="1280" fitHeight="760" pickOnBounds="true">
+        <Image url="@../../../images/background.jpg"/>
+    </ImageView>
+
+    <!-- Word Image (on top of background) -->
+    <ImageView fx:id="wordImage" fitWidth="400" fitHeight="400" layoutX="440" layoutY="100"/>
+
+    <!-- Word Prompt -->
+    <Label fx:id="wordPrompt" layoutX="490" layoutY="520" text="Spell the word:"
+           style="-fx-font-size: 28px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+    <!-- Input Field -->
+    <TextField fx:id="userInput" layoutX="400" layoutY="570" prefWidth="480" prefHeight="50"
+               style="-fx-font-size: 22px; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-padding: 10px;"
+               onAction="#checkSpelling"/>
+
+    <!-- Check Button -->
+    <Button layoutX="900" layoutY="570" prefWidth="150" prefHeight="50"
+            text="Check" style="-fx-font-size: 22px; -fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 10px;"
+            onAction="#checkSpelling"/>
+
+    <!-- Hint Button -->
+    <Button fx:id="hintButton" layoutX="400" layoutY="640" prefWidth="180" prefHeight="60" text="Hint"
+            style="-fx-font-size: 22px; -fx-background-color: #FFC107; -fx-text-fill: black; -fx-background-radius: 10px;"
+            onAction="#useHint"/>
+
+    <!-- Music Toggle Button -->
+    <Button fx:id="musicButton" layoutX="700" layoutY="640" prefWidth="180" prefHeight="60" text="Music On"
+            style="-fx-font-size: 22px; -fx-background-color: #2196F3; -fx-text-fill: white; -fx-background-radius: 10px;"
+            onAction="#toggleMusic"/>
+
+    <!-- Feedback Label -->
+    <Label fx:id="feedbackLabel" layoutX="580" layoutY="720" text=""
+           style="-fx-font-size: 26px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+</AnchorPane>

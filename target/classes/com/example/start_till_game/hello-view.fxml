@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="640" prefWidth="1000" xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.start_till_game.HelloController">
+
+    <ImageView fitHeight="720" fitWidth="1280" AnchorPane.bottomAnchor="0.0"
+               AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Image url="@../../../images/starting_page.png"/>
+    </ImageView>
+
+    <ImageView fx:id="animationImageView" onMouseClicked="#onAnimationImageViewClicked" fitHeight="200"
+               fitWidth="200" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+        <Image url="@../../../images/Animation-1739538103191.gif"/>
+    </ImageView>
+
+    <Button fx:id="signInButton" onAction="#onSignInButtonClicked" prefHeight="40" prefWidth="200"
+            text="Sign in as Neurologist" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0"/>
+</AnchorPane>
