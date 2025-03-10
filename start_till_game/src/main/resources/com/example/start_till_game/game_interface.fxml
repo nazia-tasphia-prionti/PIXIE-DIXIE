@@ -10,11 +10,9 @@
 
     <ImageView fx:id="backgroundImage" fitHeight="720.0" fitWidth="1280.0">
         <image>
-            <Image url="@../../../images/background.jpg"/>
+            <Image url="@../../../images/level.jpg"/>
         </image>
     </ImageView>
-
-    <Label fx:id="titleLabel" layoutX="540.0" layoutY="50.0" styleClass="titleLabel" text="LEVELS" />
 
     <Label fx:id="lockedMessageLabel" layoutX="440.0" layoutY="650.0" prefHeight="50.0" prefWidth="400.0" text="Level is Locked" textFill="#fff408"
            visible="false">
@@ -27,58 +25,58 @@
         <HBox fx:id="levelContainer" spacing="50.0">
             <VBox alignment="CENTER" spacing="20.0">
                 <ImageView fx:id="imageLevel1" fitHeight="150.0" fitWidth="150.0" styleClass="levelImage">
-                    <Image url="@../../../images/mercury.png"/>
+                    <Image url="@../../../images/level1.png"/>
                 </ImageView>
-                <Text style="-fx-font-size: 24px; -fx-fill: white;" text="Level 1" />
+                <Label text="Level 1" style="-fx-font-size: 18px; -fx-text-fill: white;"/>
             </VBox>
 
             <VBox alignment="CENTER" spacing="20.0">
                 <ImageView fx:id="imageLevel2" fitHeight="150.0" fitWidth="150.0" styleClass="levelImage">
-                    <Image url="@../../../images/venus.png"/>
+                    <Image url="@../../../images/level2.png"/>
                 </ImageView>
-                <Text style="-fx-font-size: 24px; -fx-fill: white;" text="Level 2" />
+                <Label text="Level 2" style="-fx-font-size: 18px; -fx-text-fill: white;"/>
             </VBox>
 
             <VBox alignment="CENTER" spacing="20.0">
                 <ImageView fx:id="imageLevel3" fitHeight="150.0" fitWidth="150.0" styleClass="levelImage">
-                    <Image url="@../../../images/earth.png"/>
+                    <Image url="@../../../images/leve3.png"/>
                 </ImageView>
-                <Text style="-fx-font-size: 24px; -fx-fill: white;" text="Level 3" />
+                <Label text="Level 3" style="-fx-font-size: 18px; -fx-text-fill: white;"/>
             </VBox>
 
             <VBox alignment="CENTER" spacing="20.0">
                 <ImageView fx:id="imageLevel4" fitHeight="150.0" fitWidth="150.0" styleClass="levelImage">
-                    <Image url="@../../../images/mars1.png"/>
+                    <Image url="@../../../images/level4.png"/>
                 </ImageView>
-                <Text style="-fx-font-size: 24px; -fx-fill: white;" text="Level 4" />
+                <Label text="Level 4" style="-fx-font-size: 18px; -fx-text-fill: white;"/>
             </VBox>
 
             <VBox alignment="CENTER" spacing="20.0">
                 <ImageView fx:id="imageLevel5" fitHeight="150.0" fitWidth="150.0" styleClass="levelImage">
-                    <Image url="@../../../images/jupiter.png"/>
+                    <Image url="@../../../images/level5.png"/>
                 </ImageView>
-                <Text style="-fx-font-size: 24px; -fx-fill: white;" text="Level 5" />
+                <Label text="Level 5" style="-fx-font-size: 18px; -fx-text-fill: white;"/>
             </VBox>
 
             <VBox alignment="CENTER" spacing="20.0">
                 <ImageView fx:id="imageLevel6" fitHeight="150.0" fitWidth="150.0" styleClass="levelImage">
-                    <Image url="@../../../images/saturn.png"/>
+                    <Image url="@../../../images/level6.png"/>
                 </ImageView>
-                <Text style="-fx-font-size: 24px; -fx-fill: white;" text="Level 6" />
+                <Label text="Level 6" style="-fx-font-size: 18px; -fx-text-fill: white;"/>
             </VBox>
 
             <VBox alignment="CENTER" spacing="20.0">
                 <ImageView fx:id="imageLevel7" fitHeight="150.0" fitWidth="150.0" styleClass="levelImage">
-                    <Image url="@../../../images/uranus.png"/>
+                    <Image url="@../../../images/level7.png"/>
                 </ImageView>
-                <Text style="-fx-font-size: 24px; -fx-fill: white;" text="Level 7" />
+                <Label text="Level 7" style="-fx-font-size: 18px; -fx-text-fill: white;"/>
             </VBox>
 
             <VBox alignment="CENTER" spacing="20.0">
                 <ImageView fx:id="imageLevel8" fitHeight="150.0" fitWidth="150.0" styleClass="levelImage">
-                    <Image url="@../../../images/neptune.png"/>
+                    <Image url="@../../../images/level8.png"/>
                 </ImageView>
-                <Text style="-fx-font-size: 24px; -fx-fill: white;" text="Level 8" />
+                <Label text="Level 8" style="-fx-font-size: 18px; -fx-text-fill: white;"/>
             </VBox>
         </HBox>
     </ScrollPane>

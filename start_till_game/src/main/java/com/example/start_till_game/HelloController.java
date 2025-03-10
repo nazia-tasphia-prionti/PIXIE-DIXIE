@@ -42,9 +42,7 @@ public class HelloController implements Initializable {
         }
     }
 
-    @FXML
-    private void onSignInButtonClicked() {
-        System.out.println("Sign in as Neurologist button clicked!");
-    }
-
+   //@FXML
+    //private void onSignInButtonClicked() {
+        //System.out.println("Sign in as Neurologist button clicked!");}
 }

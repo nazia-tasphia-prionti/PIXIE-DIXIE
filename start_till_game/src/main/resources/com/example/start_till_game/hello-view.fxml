@@ -16,7 +16,7 @@
                fitWidth="200" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
         <Image url="@../../../images/Animation-1739538103191.gif"/>
     </ImageView>
-
+    <!--
     <Button fx:id="signInButton" onAction="#onSignInButtonClicked" prefHeight="40" prefWidth="200"
-            text="Sign in as Neurologist" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0"/>
+            text="Sign in as Neurologist" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0"/> -->
 </AnchorPane>

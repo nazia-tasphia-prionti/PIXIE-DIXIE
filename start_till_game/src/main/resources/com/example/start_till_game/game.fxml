@@ -9,14 +9,14 @@
 
     <!-- Background Image -->
     <ImageView fitWidth="1280" fitHeight="760" pickOnBounds="true">
-        <Image url="@../../../images/background.jpg"/>
+        <Image url="@../../../images/game_background.jpg"/>
     </ImageView>
 
     <!-- Word Image (on top of background) -->
     <ImageView fx:id="wordImage" fitWidth="400" fitHeight="400" layoutX="440" layoutY="100"/>
 
     <!-- Word Prompt -->
-    <Label fx:id="wordPrompt" layoutX="490" layoutY="520" text="Spell the word:"
+    <Label fx:id="wordPrompt" layoutX="381" layoutY="500" text="Spell the word:"
            style="-fx-font-size: 28px; -fx-text-fill: white; -fx-font-weight: bold;"/>
 
     <!-- Input Field -->
@@ -30,16 +30,16 @@
             onAction="#checkSpelling"/>
 
     <!-- Hint Button -->
-    <Button fx:id="hintButton" layoutX="400" layoutY="640" prefWidth="180" prefHeight="60" text="Hint"
+    <Button fx:id="hintButton" layoutX="1050" layoutY="660" prefWidth="180" prefHeight="60" text="Hint"
             style="-fx-font-size: 22px; -fx-background-color: #FFC107; -fx-text-fill: black; -fx-background-radius: 10px;"
             onAction="#useHint"/>
 
     <!-- Music Toggle Button -->
-    <Button fx:id="musicButton" layoutX="700" layoutY="640" prefWidth="180" prefHeight="60" text="Music On"
+    <Button fx:id="musicButton" layoutX="32" layoutY="33" prefWidth="134" prefHeight="60" text="Music On"
             style="-fx-font-size: 22px; -fx-background-color: #2196F3; -fx-text-fill: white; -fx-background-radius: 10px;"
             onAction="#toggleMusic"/>
 
     <!-- Feedback Label -->
-    <Label fx:id="feedbackLabel" layoutX="580" layoutY="720" text=""
+    <Label fx:id="feedbackLabel" layoutX="561" layoutY="635" text=""
            style="-fx-font-size: 26px; -fx-text-fill: white; -fx-font-weight: bold;"/>
 </AnchorPane>

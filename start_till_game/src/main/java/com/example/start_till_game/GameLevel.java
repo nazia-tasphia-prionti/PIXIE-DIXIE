@@ -129,5 +129,5 @@ public class GameLevel {
 
     public void setSpaceshipX(double spaceshipX) {
         this.spaceshipX = spaceshipX;
-    }
+}
 }

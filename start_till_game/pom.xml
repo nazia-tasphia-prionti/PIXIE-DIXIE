@@ -29,12 +29,22 @@
             <artifactId>javafx-media</artifactId>
             <version>${javafx.version}</version>
         </dependency>
-    </dependencies>
+        <!-- Azure Cognitive Services SDK Dependency
+        <dependency>
+            <groupId>com.microsoft.cognitiveservices.speech</groupId>
+            <artifactId>client-sdk</artifactId>
+            <version>1.17.0</version>
+        </dependency>
+    </dependencies> -->
 
     <repositories>
         <repository>
             <id>freetts-repo</id>
             <url>https://freetts.sourceforge.net/maven2/</url>
+        </repository>
+        <repository>
+            <id>azure-sdk-repo</id>
+            <url>https://pkgs.dev.azure.com/azure-sdk/public/_packaging/azure-sdk-for-java/maven/v1</url>
         </repository>
     </repositories>
 

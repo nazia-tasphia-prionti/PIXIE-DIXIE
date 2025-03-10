@@ -1,15 +1,12 @@
 package com.example.start_till_game;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 
-import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -24,10 +21,12 @@ public class GameController {
     private boolean isMusicOn = true;
     private Map<Integer, Map<String, String>> levels;
     private SpeechValidator speechValidator;
+    //private SpeechService speechService;
 
     public void initialize() {
         initializeLevels();
         speechValidator = new SpeechValidator();
+        //speechService = new SpeechService();
         loadNextWord();
     }
 
@@ -89,16 +88,18 @@ public class GameController {
         }
 
         String word = (String) currentLevel.keySet().toArray()[wordIndex];
-        wordPrompt.setText("Spell the word: " + word);
+        wordPrompt.setText("Could you spell the word correctly?");
         wordImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream(currentLevel.get(word)))));
+        //speechService.speak("This is a " + word + ". Could you spell it correctly?");
     }
 
     @FXML
     private void checkSpelling() {
         String userInputText = userInput.getText().trim();
-        String correctWord = wordPrompt.getText().replace("Spell the word: ", "").trim();
+        String correctWord = getCurrentWord();
         boolean isCorrect = speechValidator.validateSpelling(userInputText, correctWord);
         feedbackLabel.setText(isCorrect ? "✅ Correct!" : "❌ Wrong!");
+        //speechService.speak(isCorrect ? "Correct!" : "Wrong! Please try again.");
         if (isCorrect) {
             userInput.clear();
             wordIndex++;
@@ -106,12 +107,11 @@ public class GameController {
         }
     }
 
-
     @FXML
     private void useHint() {
         if (hintCount > 0) {
             hintCount--;
-            String correctWord = wordPrompt.getText().replace("Spell the word: ", "").trim();
+            String correctWord = getCurrentWord();
             String hint = correctWord.substring(0, 2) + "...";
             feedbackLabel.setText("Hint: " + hint);
         } else {
@@ -124,5 +124,10 @@ public class GameController {
     private void toggleMusic() {
         isMusicOn = !isMusicOn;
         musicButton.setText(isMusicOn ? "Music On" : "Music Off");
+    }
+
+    private String getCurrentWord() {
+        Map<String, String> currentLevel = levels.get(level);
+        return (String) currentLevel.keySet().toArray()[wordIndex];
     }
 }
