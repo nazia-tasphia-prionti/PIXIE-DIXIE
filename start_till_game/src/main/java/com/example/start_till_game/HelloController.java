@@ -29,6 +29,8 @@ public class HelloController implements Initializable {
         rotateTransition.setByAngle(360);
         rotateTransition.setCycleCount(Animation.INDEFINITE);
         rotateTransition.play();
+        // Play background music
+        BackgroundMusicPlayer.playBackgroundMusic();
     }
 
     @FXML

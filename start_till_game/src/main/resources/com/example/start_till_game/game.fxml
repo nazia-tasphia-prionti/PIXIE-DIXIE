@@ -2,8 +2,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
-
 <?import javafx.scene.image.Image?>
+
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.start_till_game.GameController"
             prefWidth="1280" prefHeight="720">
 
@@ -12,11 +12,19 @@
         <Image url="@../../../images/game_background.jpg"/>
     </ImageView>
 
+    <ImageView fx:id="backButton" fitWidth="50" fitHeight="50" layoutX="20" layoutY="20"/>
+
+    <!-- Score Display (Single Star with Counter) -->
+    <HBox layoutX="1100" layoutY="50" spacing="10">
+        <ImageView fx:id="starImageView" fitWidth="50" fitHeight="50"/>
+        <Label fx:id="starCountLabel" text="x0" style="-fx-font-size: 36px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+    </HBox>
+
     <!-- Word Image (on top of background) -->
     <ImageView fx:id="wordImage" fitWidth="400" fitHeight="400" layoutX="440" layoutY="100"/>
 
     <!-- Word Prompt -->
-    <Label fx:id="wordPrompt" layoutX="381" layoutY="500" text="Spell the word:"
+    <Label fx:id="wordPrompt" layoutX="440" layoutY="510" text="Spell the word:"
            style="-fx-font-size: 28px; -fx-text-fill: white; -fx-font-weight: bold;"/>
 
     <!-- Input Field -->
@@ -29,17 +37,23 @@
             text="Check" style="-fx-font-size: 22px; -fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 10px;"
             onAction="#checkSpelling"/>
 
-    <!-- Hint Button -->
-    <Button fx:id="hintButton" layoutX="1050" layoutY="660" prefWidth="180" prefHeight="60" text="Hint"
-            style="-fx-font-size: 22px; -fx-background-color: #FFC107; -fx-text-fill: black; -fx-background-radius: 10px;"
-            onAction="#useHint"/>
+    <!-- Hint Button with Lamp Icon -->
+    <Button fx:id="hintButton" layoutX="1100" layoutY="640" prefWidth="60" prefHeight="60" onAction="#useHint" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+        <graphic>
+            <ImageView fitWidth="70" fitHeight="70">
+                <Image url="@../../../images/lamp.png"/>
+            </ImageView>
+        </graphic>
+    </Button>
+
+
 
     <!-- Music Toggle Button -->
-    <Button fx:id="musicButton" layoutX="32" layoutY="33" prefWidth="134" prefHeight="60" text="Music On"
+    <Button fx:id="musicButton" layoutX="90" layoutY="20" prefWidth="134" prefHeight="50" text="Music On"
             style="-fx-font-size: 22px; -fx-background-color: #2196F3; -fx-text-fill: white; -fx-background-radius: 10px;"
             onAction="#toggleMusic"/>
 
     <!-- Feedback Label -->
-    <Label fx:id="feedbackLabel" layoutX="561" layoutY="635" text=""
+    <Label fx:id="feedbackLabel" layoutX="590" layoutY="680" text=""
            style="-fx-font-size: 26px; -fx-text-fill: white; -fx-font-weight: bold;"/>
 </AnchorPane>
